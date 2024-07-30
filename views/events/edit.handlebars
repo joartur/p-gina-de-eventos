@@ -1,0 +1,35 @@
+<h1>Editando a Tarefa: {{event.title}}</h1>
+    <form action="/events/edit" method="POST">
+        <input type="hidden" name="id" value="{{event.id}}" />
+        <div class="form-control">
+            <label for="title">Título: </label>
+            <input type="text" name="title" placeholder="Digite o evento" value="{{event.title}}">
+        </div>
+
+        <div class="form-control">
+            <label for="description">Descrição: </label>
+            <input type="text" name="description" placeholder="Descreva o evento..." value="{{event.description}}">
+        </div>
+
+        <div class="form-control">
+            <label for="data">Data: </label>
+            <input type="date" name="data" id="data" placeholder="DD-MM-AAAA" value="{{event.data}}">
+        </div>
+
+        <div class="form-control">
+            <label for="hora">Hora: </label>
+            <input type="time" name="hora" id="hora" placeholder="HH:MM" value="{{event.hora}}">
+        </div>
+
+        <div class="form-control">
+            <label for="preco">Preço: </label>
+            <input type="text" name="preco" id="preco" value="{{event.preco}}">
+        </div>
+
+        <div class="form-control">
+            <label for="imagem">Imagem (URL):</label>
+            <input type="url" id="imagem" name="imagem" value="{{event.imagem}}">
+        </div>
+
+        <input type="submit" value="Editar">
+    </form>
