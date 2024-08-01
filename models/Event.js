@@ -25,6 +25,14 @@ const Event = db.define('Event', {
     imagem: {
         type: DataTypes.STRING,
         allowNull: true 
+    },
+    city: {
+        type: DataTypes.STRING,
+        required: true
+    },
+    location: {
+        type: DataTypes.STRING,
+        required: true
     }
 })
 module.exports = Event;

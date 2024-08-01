@@ -1,25 +1,20 @@
 <h1>Todos os Eventos</h1>
-<ul class="task-list">
+<div class="event-list">
     {{#each events}}
-        <li>
-            <img src="{{this.imagem}}" alt="{{this.title}}" style="max-width: 300px; height: auto;">            
-            <br><br>
-            {{this.title}} - {{this.description}} - {{this.data}} - {{this.hora}} - R${{this.preco}}
-            <div class="actions">
-                <form action="/events/updatestatus" method="POST">
-                    <input type="hidden" name="id" value="{{this.id}}">
-                    <button type="submit">
-                        <i class="bi bi-check2"></i>
-                    </button>
-                </form>
-                <a href="/events/edit/{{this.id}}"> <i class="bi bi-pencil-square"></i></a>
-                <form action="/events/remove" method="POST">
-                    <input type="hidden" name="id" value="{{this.id}}">
-                    <button type="submit">
-                        <i class="bi bi-trash"></i>
-                    </button>                   
-                </form>
+    <div class="event-item">
+        <a href="/events/view/{{this.id}}">
+            <img src="{{this.imagem}}" alt="{{this.title}}" class="event-image">
+        </a>
+        <div class="event-detail">
+            <div class="event-detail-left">
+                <p class="event-datetime">{{formatDateCustom this.data}}</p>
             </div>
-        </li>
+            <div class="event-detail-right">
+                <span class="cidade">{{this.city}}</span><br>
+                <span class="nome"><a href="/events/view/{{this.id}}"><strong>{{truncate this.title 29}}</strong></a></span><br>
+                <span class="local"><strong>{{this.location}}</strong></span>
+            </div>
+        </div>
+    </div>
     {{/each}}
-</ul>
+</div>

@@ -8,6 +8,7 @@ router.post('/remove', EventsController.removeEvent);
 router.get('/edit/:id', EventsController.updateEvent);
 router.post('/edit', EventsController.updateEventPost);
 router.post('/updatestatus', EventsController.toggleEventStatus);
+router.get('/view/:id', EventsController.viewEvent);
 router.get('/', EventsController.showEvents);
 
 module.exports = router;

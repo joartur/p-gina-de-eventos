@@ -1,30 +1,390 @@
-*{  font-family: Helvetica;
+* {
+    font-family: Montserrat, sans-serif;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
-#navbar{
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #EE3680;
+}
+
+.event-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 0;
+}
+
+.event-item {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.event-item:hover {
+    transform: scale(1.02);
+}
+
+.event-title {
+    font-size: 1.5em;
+    color: #333;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.event-title:hover {
+    color: #EE3680;
+}
+
+.event-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.event-detail {
+    width: 80%;
+    background: #fff;
+    margin: 0 auto 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.event-detail-comprar {
+    padding: 10px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s;
+}
+
+.event-detail-comprar p{
+    color: #000000;
+}
+
+.event-detail-comprar i{
+    color: #EE3680;
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.event-detail-left {
+    width: 25%;
+    padding: 5px;
+}
+
+.event-detail-right {
+    width: 75%;
+    padding: 5px;
+}
+
+.event-detail-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.event-detail-item i {
+    margin-right: 15px;
+}
+
+.event-detail-item span {
+    flex: 1;
+}
+
+.event-detail-right h1 {
+    text-align: left;
+    font-weight: 900;
+    color: #EE3680;
+}
+
+.event-detail-right .cidade {
+    font-size: 12px;
+    color: #EE3680;
+}
+
+.event-detail-right .nome {
+    font-size: 16px;
+    color: #161616;
+}
+
+.event-detail-right .nome a{
+    text-decoration: none;
+}
+
+.event-detail-right .local {
+    font-size: 13px;
+    color: #9C9C9C;
+}
+
+.event-detail p a{
+    text-decoration: none;
+}
+
+.event-detail p{
+    margin-bottom: 15px;
+}
+
+/* .event-detail p strong {
+    color: #EE3680;
+} */
+
+.event-detail-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 10px;
+    display: block;
+}
+
+.event-datetime {
+    text-align: center; 
+    justify-content: center;
+    align-items: center;
+}
+
+.event-datetime .day-of-week {
+    text-transform: uppercase; 
+    font-size: 9px;
+    font-weight: bold; 
+}
+
+.event-datetime .day {
+    color: #EE3680; 
+    font-weight: bold; 
+    font-size: 24px;
+}
+
+.event-datetime .month {
+    color: #FFFFFF; 
+    background-color: #EE3680; 
+    padding: 1px 0 2px; 
+    margin: 4px 0;
+}
+
+.status-completed {
+    color: #4caf50;
+    font-weight: bold;
+}
+
+.status-pending {
+    color: #ff9800; 
+    font-weight: bold;
+}
+
+#navbar {
     border-bottom: 1px solid #ccc;
     padding: 12px 24px;
     margin-bottom: 12px;
-    background-color: #db4c3f;
+    background-color: #000;
     color: #fff;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
 }
+
 #navbar ul {
-    display: flex; list-style: none; margin: 0;
+    display: flex;
+    list-style: none;
+    margin: 0;
 }
+
 #navbar ul li {
     margin-left: 12px;
 }
+
 #navbar ul li a {
     text-decoration: none;
-     color:#fff
+    color: #fff;
 }
+
 #navbar img {
     width: 50px;
     height: 50px;
     border-radius: 50%;
     margin-right: 12px;
 }
+
+.event-detail-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.event-details p {
+    margin-bottom: 10px;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.actions form {
+    display: inline-block;
+}
+
+.actions .btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+    margin: auto 10px;
+}
+
+.btn-status {
+    background-color: #007bff;
+}
+
+.btn-edit {
+    background-color: #28a745;
+}
+
+.btn-delete {
+    background-color: #dc3545;
+}
+
+.btn-back {
+    display: block;
+    margin: 20px auto 0;
+    text-align: center;
+    background-color: #6c757d;
+    padding: 10px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.comprar-button {
+    width: 100%;
+    height: 70px;
+    font-size: 2em;
+    background: #EE3680;
+    color: #fff;
+    border: none;
+    padding: 10px 0;
+    border-radius: 50px;
+    margin: 25px 0 25px;
+}
+
+.ver-localizacao {
+    width: 60%;
+    height: 30px;
+    font-size: 1em;
+    background: #FFFFFF;
+    color: #6900B2;
+    font-weight: bold;
+    border: 2px solid #6900B2;
+    padding: 6px 0;
+    border-radius: 50px;
+    margin: 15px 0 15px;
+    margin-left: 40px;
+}
+
+.action-button {
+    background: #EE3680;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.action-button:hover {
+    background: #c43d32;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    background: #EE3680;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    background: #c43d32;
+}
+
+.event-form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-control {
+    margin-bottom: 15px;
+}
+
+.form-control label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.form-control input[type="text"],
+.form-control input[type="date"],
+.form-control input[type="time"],
+.form-control input[type="number"],
+.form-control input[type="url"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.form-control input[type="text"]:focus,
+.form-control input[type="date"]:focus,
+.form-control input[type="time"]:focus,
+.form-control input[type="number"]:focus,
+.form-control input[type="url"]:focus {
+    border-color: #db4c3f;
+    outline: none;
+}
+
+.submit-button {
+    background-color: #db4c3f;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #c0392b;
+}
+

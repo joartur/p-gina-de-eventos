@@ -1,0 +1,50 @@
+<div class="event-detail">
+    <p><img src="{{event.imagem}}" alt="Imagem do evento" class="event-detail-image"></p>
+    <div class="event-detail-right">
+        <h1>{{event.title}}</h1>
+        <p><strong>Sobre</strong><br> {{event.description}}</p>
+    </div>
+    <div class="event-detail-left">
+        <div class="event-detail-comprar">
+        <button type="#" class="comprar-button">Comprar</button>
+            <div class="event-detail-item">
+                <i class="bi bi-calendar-check"></i>
+                <span><strong>{{formatDate event.data}}</strong> às {{formatTime event.hora}}</span>
+            </div>
+            <div class="event-detail-item">
+                <i class="bi bi-ticket-perforated"></i>
+                <span>Ingressos a partir de <strong>R${{event.preco}}</strong> em até 1x</span>
+            </div>
+            <div class="event-detail-item">
+                <i class="bi bi-geo-alt"></i>
+                <span><strong>{{event.location}}</strong><br>{{event.city}}</span>
+            </div>
+                <button type="#" class="ver-localizacao">Ver Localização</button>
+        </div>
+    </div>
+ 
+ 
+        <div class="actions">
+            <form action="/events/updatestatus" method="POST">
+                <input type="hidden" name="id" value="{{event.id}}">
+                <button type="submit" class="btn btn-status">
+                    <i class="bi bi-check2"></i> Atualizar Status
+                </button>
+            </form>
+            <a href="/events/edit/{{event.id}}" class="btn btn-edit">
+                <i class="bi bi-pencil-square"></i> Editar
+            </a>
+            <form action="/events/remove" method="POST">
+                <input type="hidden" name="id" value="{{event.id}}">
+                <button type="submit" class="btn btn-delete">
+                    <i class="bi bi-trash"></i> Remover
+                </button>
+            </form>
+        </div>
+        <a href="/events" class="btn btn-back">Voltar para todos os eventos</a>
+    </div>
+
+
+
+
+
